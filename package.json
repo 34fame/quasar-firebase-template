@@ -1,0 +1,25 @@
+{
+   "name": "quasar-firebase-template",
+   "version": "1.0.0",
+   "main": "index.js",
+   "license": "MIT",
+   "devDependencies": {
+      "npm-run-all": "^4.1.5"
+   },
+   "scripts": {
+      "client:deploy:prod": "cd client && yarn deploy:prod:spa",
+      "client:deploy:dev": "cd client && yarn deploy:dev:spa",
+      "client:dev:spa": "cd client && yarn dev:spa",
+      "client:local:spa": "cd client && yarn local:spa",
+      "client:test:cypress": "cd client && yarn test:cypress",
+      "server:deploy:prod": "cd server && yarn deploy:prod",
+      "server:deploy:dev": "cd server && yarn deploy:dev",
+      "server:dev": "cd server && yarn dev",
+      "server:local": "cd server && yarn local",
+      "deploy:prod": "npm-run-all --parallel client:deploy:prod server:deploy:prod",
+      "deploy:dev": "npm-run-all --parallel client:deploy:dev server:deploy:dev",
+      "dev:spa": "npm-run-all --parallel client:dev:spa server:dev",
+      "local:spa": "npm-run-all --parallel client:local:spa server:local",
+      "test:cypress": "npm-run-all --parallel client:test:cypress server:local"
+   }
+}

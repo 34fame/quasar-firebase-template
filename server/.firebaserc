@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "dev": "fame-sandbox-dev",
+    "prod": "fame-sandbox-prod"
+  }
+}

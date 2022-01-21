@@ -1,0 +1,20 @@
+{
+   "emulators": {
+      "functions": {
+         "host": "127.0.0.1",
+         "port": 5001
+      },
+      "ui": {
+         "enabled": true
+      },
+      "auth": {
+         "port": 9099
+      },
+      "firestore": {
+         "port": 8070
+      },
+      "pubsub": {
+         "port": 8085
+      }
+   }
+}

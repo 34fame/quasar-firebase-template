@@ -1,0 +1,29 @@
+{
+   "name": "server",
+   "version": "1.0.0",
+   "main": "index.js",
+   "license": "MIT",
+   "devDependencies": {
+      "jest": "^26.6.3"
+   },
+   "scripts": {
+      "test": "jest --detectOpenHandles",
+      "shell": "firebase functions:shell",
+      "logs": "firebase functions:log",
+      "env:prod": "cp .env.prod .env",
+      "env:dev": "cp .env.dev .env",
+      "env:local": "cp .env.local .env",
+      "service:prod": "cd functions/services/firebase && cp service-account-prod.json service-account.json",
+      "service:dev": "cd functions/services/firebase && cp service-account-dev.json service-account.json",
+      "firebase:use:prod": "firebase use prod",
+      "firebase:use:dev": "firebase use dev",
+      "firebase:deploy:prod": "firebase deploy -P prod",
+      "firebase:deploy:dev": "firebase deploy -P dev",
+      "firebase:emulators:dev": "firebase emulators:start --only functions",
+      "firebase:emulators:local": "firebase emulators:start",
+      "deploy:prod": "npm-run-all env:prod service:prod firebase:use:prod firebase:deploy:prod",
+      "deploy:dev": "npm-run-all env:dev service:dev firebase:use:dev firebase:deploy:dev",
+      "dev": "npm-run-all env:dev service:dev firebase:emulators:dev",
+      "local": "npm-run-all env:local service:dev firebase:emulators:local"
+   }
+}
